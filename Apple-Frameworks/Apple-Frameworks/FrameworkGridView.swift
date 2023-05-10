@@ -2,17 +2,26 @@
 //  FrameworkGridView.swift
 //  Apple-Frameworks
 //
-//  Created by James Lea on 11/29/22.
+//  Created by James Lea on 5/10/23.
 //
 
 import SwiftUI
 
 struct FrameworkGridView: View {
+    
+    let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
-        ZStack {
-            FrameStack()
-        }
         
+        LazyVGrid(columns: columns) {
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            FrameworkTitleView(name: "App Clips", imageName: "app-clip")
+            
+        }
     }
 }
 
@@ -22,23 +31,22 @@ struct FrameworkGridView_Previews: PreviewProvider {
     }
 }
 
-struct FrameStack: View {
-    
-//    var imageName: String
-//    var text: String
+struct FrameworkTitleView: View {
+    let name: String
+    let imageName: String
     
     var body: some View {
         VStack {
-            Image("app-clip")
-                .renderingMode(.original)
+            Image(imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-            Text("App Clip")
-                .frame(width: 100, height: 32)
-                .font(.system(size: 500))
-                .minimumScaleFactor(0.01)
-                .lineLimit(1)
+                .frame(width: 90, height: 90)
+            Text(name)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .scaledToFit()
+                .minimumScaleFactor(0.6)
         }
     }
+    
+    
 }

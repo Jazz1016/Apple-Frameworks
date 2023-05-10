@@ -2,7 +2,7 @@
 //  Framework.swift
 //  Apple-Frameworks
 //
-//  Created by James Lea on 11/29/22.
+//  Created by James Lea on 5/10/23.
 //
 
 import Foundation
@@ -14,8 +14,8 @@ struct Framework {
     let description: String
 }
 
+
 struct MockData {
-    
     static let sampleFramework = Framework(name: "ARKit",
                                            imageName: "arkit",
                                            urlString: "https://developer.apple.com/augmented-reality/arkit",
