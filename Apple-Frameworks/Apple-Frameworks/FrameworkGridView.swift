@@ -26,7 +26,7 @@ struct FrameworkGridView: View {
             }
             .navigationTitle("🍎 Frameworks")
             .sheet(isPresented: $viewModel.isShowDetailView) {
-                FrameworkDetailView(framework: viewModel.selectedFramework)
+//                FrameworkDetailView(framework: viewModel.selectedFramework)
             }
         }
     }
